@@ -28,11 +28,8 @@ jobs:
         run: mkdir -p projects
 
       - name: Generate ML project
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        shell: bash
         run: |
-          python3 << 'SCRIPT'
+          python3 << 'EOF'
 import os
 import json
 import datetime
@@ -53,45 +50,31 @@ project_dir = f'projects/{project_date}_{category}'
 os.makedirs(project_dir, exist_ok=True)
 
 # Generate project files
-project_code = f"""import numpy as np
+project_code = '''import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score, mean_squared_error
 
-print(f'Generated project for {category} on {project_date}')
-print('Project structure created successfully!')
-"""
+print(f\"Generated project for ''' + category + ''' on ''' + project_date + '''\")
+print("Project structure created successfully!")
+'''
 
 with open(f'{project_dir}/project.py', 'w') as f:
     f.write(project_code)
 
-readme = f"""# ML Project: {category.upper()}
-Generated on {project_date}
-
-## Description
-This is an automated ML project for {category}.
-
-## Files
-- project.py: Main project implementation
-- requirements.txt: Project dependencies
-"""
+readme = f"ML Project: {category.upper()}\nGenerated on {project_date}\n\nDescription\nThis is an automated ML project for {category}.\n\nFiles\n- project.py: Main project implementation\n- requirements.txt: Project dependencies"
 
 with open(f'{project_dir}/README.md', 'w') as f:
     f.write(readme)
 
-requirements = """numpy
-pandas
-scikit-learn
-matplotlib
-seaborn
-"""
+requirements = "numpy\npandas\nscikit-learn\nmatplotlib\nseaborn"
 
 with open(f'{project_dir}/requirements.txt', 'w') as f:
     f.write(requirements)
 
 print(f'Project files created in {project_dir}')
-SCRIPT
+EOF
 
       - name: Configure git
         run: |
