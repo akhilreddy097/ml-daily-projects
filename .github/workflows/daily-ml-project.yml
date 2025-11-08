@@ -1,8 +1,9 @@
 name: Daily ML Project Generator
 on:
   schedule:
-    - cron: '0 9 * * *'
-  workflow_dispatch:
+    - cron: '*/5 * * * *'
+     workflow_dispatch:
+    
 
 jobs:
   generate-ml-project:
@@ -44,7 +45,7 @@ jobs:
 
           # Create project directory
           project_date = today.strftime('%Y-%m-%d')
-          project_dir = f'projects/{project_date}_{category}'
+          project_dir = f'projects/{project_date}_{categor_{today.strftime('%H%M%S')}''
           os.makedirs(project_dir, exist_ok=True)
 
           # Generate project files
