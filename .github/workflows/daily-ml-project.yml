@@ -1,7 +1,7 @@
 name: Daily ML Project Generator
 on:
   schedule:
-    - cron: '*/5 * * * *'
+        - cron: '0 9,21 * * *'
   workflow_dispatch:
 
 jobs:
