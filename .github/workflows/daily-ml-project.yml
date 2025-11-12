@@ -28,49 +28,49 @@ jobs:
       - name: Generate ML project
         run: |
           python3 << 'EOF'
-import os
-import json
-import datetime
-import random
-import numpy as np
-import pandas as pd
-from datetime import datetime as dt
-
-# Determine category based on day of week
-today = dt.now()
-day_of_week = today.weekday()
-categories = ['regression', 'classification', 'nlp', 'computer_vision', 'time_series', 'clustering', 'ensemble']
-category = categories[day_of_week % len(categories)]
-
-# Create project directory
-project_date = today.strftime('%Y-%m-%d')
-project_dir = f'projects/{project_date}_{category}_{today.strftime("%H%M%S")}'
-os.makedirs(project_dir, exist_ok=True)
-
-# Generate project files
-project_code = f'''import numpy as np
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import accuracy_score, mean_squared_error
-
-print(f"Generated project for {category} on {project_date}")
-print("Project structure created successfully!")
-'''
-
-with open(f'{project_dir}/project.py', 'w') as f:
-    f.write(project_code)
-
-readme = f"ML Project: {category.upper()}\\nGenerated on {project_date}\\n\\nDescription\\nThis is an automated ML project for {category}.\\n\\nFiles\\n- project.py: Main project implementation\\n- requirements.txt: Project dependencies"
-with open(f'{project_dir}/README.md', 'w') as f:
-    f.write(readme)
-
-requirements = "numpy\\npandas\\nscikit-learn\\nmatplotlib\\nseaborn"
-with open(f'{project_dir}/requirements.txt', 'w') as f:
-    f.write(requirements)
-
-print(f'Project files created in {project_dir}')
-EOF
+          import os
+          import json
+          import datetime
+          import random
+          import numpy as np
+          import pandas as pd
+          from datetime import datetime as dt
+          
+          # Determine category based on day of week
+          today = dt.now()
+          day_of_week = today.weekday()
+          categories = ['regression', 'classification', 'nlp', 'computer_vision', 'time_series', 'clustering', 'ensemble']
+          category = categories[day_of_week % len(categories)]
+          
+          # Create project directory
+          project_date = today.strftime('%Y-%m-%d')
+          project_dir = f'projects/{project_date}_{category}_{today.strftime("%H%M%S")}'
+          os.makedirs(project_dir, exist_ok=True)
+          
+          # Generate project files
+          project_code = f'''import numpy as np
+          import pandas as pd
+          from sklearn.model_selection import train_test_split
+          from sklearn.preprocessing import StandardScaler
+          from sklearn.metrics import accuracy_score, mean_squared_error
+          
+          print(f"Generated project for {category} on {project_date}")
+          print("Project structure created successfully!")
+          '''
+          
+          with open(f'{project_dir}/project.py', 'w') as f:
+              f.write(project_code)
+          
+          readme = f"ML Project: {category.upper()}\\nGenerated on {project_date}\\n\\nDescription\\nThis is an automated ML project for {category}.\\n\\nFiles\\n- project.py: Main project implementation\\n- requirements.txt: Project dependencies"
+          with open(f'{project_dir}/README.md', 'w') as f:
+              f.write(readme)
+          
+          requirements = "numpy\\npandas\\nscikit-learn\\nmatplotlib\\nseaborn"
+          with open(f'{project_dir}/requirements.txt', 'w') as f:
+              f.write(requirements)
+          
+          print(f'Project files created in {project_dir}')
+          EOF
 
       - name: Configure git
         run: |
