@@ -79,10 +79,10 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          if git diff --quiet; then
-            echo "No changes to commit"
-          else
-            git add projects/
-            git commit -m "Auto: Generated ML project for $(date +'%Y-%m-%d')"
-            git push
-          fi
+          git add projects/
+            if [ -z "$(git status --porcelain)" ]; then
+              echo "No changes to commit"
+            else
+              git commit -m "Auto: Generated ML project for $(date +'%Y-%m-%d')"
+              git push
+            fi
