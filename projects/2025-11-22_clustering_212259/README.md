@@ -1,0 +1,1 @@
+ML Project: CLUSTERING\nGenerated on 2025-11-22\n\nDescription\nThis is an automated ML project for clustering.\n\nFiles\n- project.py: Main project implementation\n- requirements.txt: Project dependencies
