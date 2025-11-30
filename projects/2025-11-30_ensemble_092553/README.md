@@ -1,0 +1,1 @@
+ML Project: ENSEMBLE\nGenerated on 2025-11-30\n\nDescription\nThis is an automated ML project for ensemble.\n\nFiles\n- project.py: Main project implementation\n- requirements.txt: Project dependencies
