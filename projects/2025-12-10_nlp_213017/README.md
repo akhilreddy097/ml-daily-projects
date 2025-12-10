@@ -1,0 +1,1 @@
+ML Project: NLP\nGenerated on 2025-12-10\n\nDescription\nThis is an automated ML project for nlp.\n\nFiles\n- project.py: Main project implementation\n- requirements.txt: Project dependencies
