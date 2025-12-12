@@ -1,0 +1,1 @@
+ML Project: TIME_SERIES\nGenerated on 2025-12-12\n\nDescription\nThis is an automated ML project for time_series.\n\nFiles\n- project.py: Main project implementation\n- requirements.txt: Project dependencies
