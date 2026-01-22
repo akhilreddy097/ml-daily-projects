@@ -1,0 +1,1 @@
+ML Project: COMPUTER_VISION\nGenerated on 2026-01-22\n\nDescription\nThis is an automated ML project for computer_vision.\n\nFiles\n- project.py: Main project implementation\n- requirements.txt: Project dependencies
