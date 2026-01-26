@@ -1,0 +1,1 @@
+ML Project: REGRESSION\nGenerated on 2026-01-26\n\nDescription\nThis is an automated ML project for regression.\n\nFiles\n- project.py: Main project implementation\n- requirements.txt: Project dependencies
