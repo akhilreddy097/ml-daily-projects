@@ -1,0 +1,1 @@
+ML Project: CLASSIFICATION\nGenerated on 2026-02-03\n\nDescription\nThis is an automated ML project for classification.\n\nFiles\n- project.py: Main project implementation\n- requirements.txt: Project dependencies
